@@ -1,0 +1,1197 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Outfit:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400;1,600&display=swap");
+
+/* @settings
+
+name: MultiMuse
+id: multimuse-theme
+settings:
+    -
+        id: mm-info
+        title: Palettes
+        description: "Palettes: **Stage** and **Classic** from Hub, plus **StageHand** from the StageHand dashboard. Light and dark follow **Settings → Appearance → Base color scheme**."
+        type: info-text
+        markdown: true
+    -
+        id: mm-heading-presets
+        title: Presets
+        type: heading
+        level: 2
+        collapsed: false
+    -
+        id: mm-color-preset
+        title: Color preset
+        description: Stage is Hub’s teal and gold. Classic is multimuse.app charcoal and paper. StageHand is booth navy, signature pink, and periwinkle. Light and dark follow the app.
+        type: class-select
+        allowEmpty: false
+        default: mm-palette-stage
+        options:
+            -
+                label: Stage
+                value: mm-palette-stage
+            -
+                label: Classic
+                value: mm-palette-classic
+            -
+                label: StageHand
+                value: mm-palette-stagehand
+    -
+        id: mm-heading-type
+        title: Typography
+        type: heading
+        level: 2
+        collapsed: false
+    -
+        id: mm-font-pack
+        title: Font pack
+        description: MultiMuse and StageHand dashboards use Outfit + Fraunces. Hub Stage is Source Sans + Cinzel headings + Cormorant editor. Hub Classic is Source Sans + Fraunces headings.
+        type: class-select
+        allowEmpty: false
+        default: mm-fonts-multimuse
+        options:
+            -
+                label: MultiMuse (Outfit + Fraunces)
+                value: mm-fonts-multimuse
+            -
+                label: Hub Stage (Source Sans + Cinzel)
+                value: mm-fonts-hub-stage
+            -
+                label: Hub Classic (Source Sans + Fraunces)
+                value: mm-fonts-hub-classic
+            -
+                label: StageHand (Outfit + Fraunces)
+                value: mm-fonts-stagehand
+    -
+        id: mm-heading-colors
+        title: Colors
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: mm-custom-colors
+        title: Override preset colors
+        description: When on, the pickers below replace the active palette. Turn off to return to Stage, Classic, or StageHand.
+        type: class-toggle
+        default: false
+    -
+        id: mm-custom-teal
+        title: Accent
+        description: Links, checks, active states. Teal on Stage/Classic, pink on StageHand.
+        type: variable-themed-color
+        format: hex
+        opacity: false
+        default-light: '#03928c'
+        default-dark: '#03c6c0'
+    -
+        id: mm-custom-teal-bright
+        title: Bright accent
+        description: Hover, caret, and highlight.
+        type: variable-themed-color
+        format: hex
+        default-light: '#03928c'
+        default-dark: '#0ad8c2'
+    -
+        id: mm-custom-gold
+        title: Secondary
+        description: Gold on Stage/Classic, periwinkle on StageHand.
+        type: variable-themed-color
+        format: hex
+        default-light: '#c8a84b'
+        default-dark: '#c8a84b'
+    -
+        id: mm-custom-gold-light
+        title: Light secondary
+        description: Softer gold, ice, or parchment for chips and graph tags.
+        type: variable-themed-color
+        format: hex
+        default-light: '#a88830'
+        default-dark: '#e3c868'
+    -
+        id: mm-custom-bg
+        title: Background
+        description: Primary canvas (Hub deep-stage / paper).
+        type: variable-themed-color
+        format: hex
+        default-light: '#f4eed8'
+        default-dark: '#05171b'
+    -
+        id: mm-custom-card
+        title: Surface
+        description: Sidebars, cards, and secondary panels.
+        type: variable-themed-color
+        format: hex
+        default-light: '#faf6e8'
+        default-dark: '#0b2228'
+    -
+        id: mm-custom-card-2
+        title: Raised surface
+        description: Nested cards, code, and popovers.
+        type: variable-themed-color
+        format: hex
+        default-light: '#f0e9d0'
+        default-dark: '#0d2730'
+    -
+        id: mm-custom-text
+        title: Text
+        type: variable-themed-color
+        format: hex
+        default-light: '#1a2e2c'
+        default-dark: '#d8e6e4'
+    -
+        id: mm-custom-text-dim
+        title: Muted text
+        type: variable-themed-color
+        format: hex
+        default-light: '#5a726f'
+        default-dark: '#8faaa8'
+    -
+        id: mm-custom-line
+        title: Border
+        type: variable-themed-color
+        format: hex
+        default-light: '#d4c9a0'
+        default-dark: '#12333a'
+    -
+        id: mm-custom-ink
+        title: Ink (on accent)
+        description: Text on teal/gold buttons.
+        type: variable-themed-color
+        format: hex
+        default-light: '#031327'
+        default-dark: '#031327'
+    -
+        id: mm-heading-org
+        title: Organization
+        type: heading
+        level: 2
+        collapsed: false
+    -
+        id: mm-rainbow-folders
+        title: Rainbow folders
+        description: Color folder names, collapse icons, and indent guides by depth.
+        type: class-toggle
+        default: true
+        addCommand: true
+    -
+        id: mm-active-accent-bar
+        title: Active file accent bar
+        description: Teal bar on the open file in the explorer.
+        type: class-toggle
+        default: true
+    -
+        id: mm-nav-cards
+        title: Card-style navigation
+        description: Rounded hover/active states in the file explorer, like dashboard rows.
+        type: class-toggle
+        default: true
+    -
+        id: mm-folder-1
+        title: Folder color 1
+        description: Independent of the Hub preset so vault structure stays recognizable.
+        type: variable-color
+        format: hex
+        default: '#0ad8c2'
+    -
+        id: mm-folder-2
+        title: Folder color 2
+        type: variable-color
+        format: hex
+        default: '#c8a84b'
+    -
+        id: mm-folder-3
+        title: Folder color 3
+        type: variable-color
+        format: hex
+        default: '#ff9cc1'
+    -
+        id: mm-folder-4
+        title: Folder color 4
+        type: variable-color
+        format: hex
+        default: '#6d7dbb'
+    -
+        id: mm-folder-5
+        title: Folder color 5
+        type: variable-color
+        format: hex
+        default: '#03928c'
+    -
+        id: mm-folder-6
+        title: Folder color 6
+        type: variable-color
+        format: hex
+        default: '#e3c868'
+    -
+        id: mm-heading-layout
+        title: Layout
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: mm-radius
+        title: Corner radius
+        description: Dashboard-style rounding.
+        type: variable-number-slider
+        default: 10
+        min: 0
+        max: 20
+        step: 1
+        format: px
+    -
+        id: mm-nav-indent
+        title: Folder indent
+        type: variable-number-slider
+        default: 12
+        min: 4
+        max: 28
+        step: 1
+        format: px
+
+*/
+
+/* ==========================================================================
+   01. Font packs
+   Default = MultiMuse dashboards (Outfit + Fraunces)
+   ========================================================================== */
+
+body {
+  --mm-font-ui: "Outfit", system-ui, sans-serif;
+  --mm-font-text: "Outfit", system-ui, sans-serif;
+  --mm-font-display: "Fraunces", Georgia, serif;
+  --mm-font-mono: "DM Mono", ui-monospace, "Cascadia Code", monospace;
+}
+
+body.mm-fonts-multimuse {
+  --mm-font-ui: "Outfit", system-ui, sans-serif;
+  --mm-font-text: "Outfit", system-ui, sans-serif;
+  --mm-font-display: "Fraunces", Georgia, serif;
+}
+
+body.mm-fonts-hub-stage {
+  --mm-font-ui: "Source Sans 3", system-ui, sans-serif;
+  --mm-font-text: "Cormorant Garamond", Georgia, serif;
+  --mm-font-display: "Cinzel", Georgia, serif;
+}
+
+body.mm-fonts-hub-classic {
+  --mm-font-ui: "Source Sans 3", system-ui, sans-serif;
+  --mm-font-text: "Source Sans 3", system-ui, sans-serif;
+  --mm-font-display: "Fraunces", Georgia, serif;
+}
+
+body.mm-fonts-stagehand {
+  --mm-font-ui: "Outfit", system-ui, sans-serif;
+  --mm-font-text: "Outfit", system-ui, sans-serif;
+  --mm-font-display: "Fraunces", Georgia, serif;
+}
+
+/* ==========================================================================
+   02. Hub palettes — light/dark follow Obsidian (.theme-light / .theme-dark)
+   Stage is default. Classic is mm-palette-classic.
+   ========================================================================== */
+
+.theme-dark {
+  --mm-bg: #05171b;
+  --mm-bg-alt: #071c21;
+  --mm-card: #0b2228;
+  --mm-card-2: #0d2730;
+  --mm-ink: #031327;
+  --mm-teal: #03c6c0;
+  --mm-teal-bright: #0ad8c2;
+  --mm-teal-deep: #03928c;
+  --mm-teal-shadow: #015253;
+  --mm-gold: #c8a84b;
+  --mm-gold-light: #e3c868;
+  --mm-parchment: #e9d892;
+  --mm-text: #d8e6e4;
+  --mm-text-dim: #8faaa8;
+  --mm-line: #12333a;
+  --mm-accent-h: 178;
+  --mm-accent-s: 97%;
+  --mm-accent-l: 39%;
+  --mm-scrollbar: #015253;
+  --mm-folder-1: #0ad8c2;
+  --mm-folder-2: #c8a84b;
+  --mm-folder-3: #ff9cc1;
+  --mm-folder-4: #6d7dbb;
+  --mm-folder-5: #03928c;
+  --mm-folder-6: #e3c868;
+}
+
+.theme-light {
+  --mm-bg: #f4eed8;
+  --mm-bg-alt: #efe8cc;
+  --mm-card: #faf6e8;
+  --mm-card-2: #f0e9d0;
+  --mm-ink: #031327;
+  --mm-teal: #03c6c0;
+  --mm-teal-bright: #03928c;
+  --mm-teal-deep: #015253;
+  --mm-teal-shadow: #9dd4d2;
+  --mm-gold: #c8a84b;
+  --mm-gold-light: #a88830;
+  --mm-parchment: #1a2e2c;
+  --mm-text: #1a2e2c;
+  --mm-text-dim: #5a726f;
+  --mm-line: #d4c9a0;
+  --mm-accent-h: 178;
+  --mm-accent-s: 97%;
+  --mm-accent-l: 36%;
+  --mm-scrollbar: #9dd4d2;
+  --mm-folder-1: #03928c;
+  --mm-folder-2: #a88830;
+  --mm-folder-3: #c45a86;
+  --mm-folder-4: #4d5d9a;
+  --mm-folder-5: #015253;
+  --mm-folder-6: #8a7028;
+}
+
+body.mm-palette-classic.theme-dark {
+  --mm-bg: #0f1220;
+  --mm-bg-alt: #141828;
+  --mm-card: #1a1f2e;
+  --mm-card-2: #222838;
+  --mm-ink: #0f1220;
+  --mm-teal: #3ab8b5;
+  --mm-teal-bright: #3ab8b5;
+  --mm-teal-deep: #2a9e9b;
+  --mm-teal-shadow: #1e6b69;
+  --mm-gold: #e8c96a;
+  --mm-gold-light: #f5e6b8;
+  --mm-parchment: #faf7ee;
+  --mm-text: #faf7ee;
+  --mm-text-dim: #6b7d94;
+  --mm-line: #2e3d52;
+  --mm-accent-h: 178;
+  --mm-accent-s: 52%;
+  --mm-accent-l: 47%;
+  --mm-scrollbar: #3d4a66;
+  --mm-folder-1: #3ab8b5;
+  --mm-folder-2: #e8c96a;
+  --mm-folder-3: #ff9cc1;
+  --mm-folder-4: #4a6fa5;
+  --mm-folder-5: #2a9e9b;
+  --mm-folder-6: #f5e6b8;
+}
+
+body.mm-palette-classic.theme-light {
+  --mm-bg: #faf7ee;
+  --mm-bg-alt: #f3efe4;
+  --mm-card: #ffffff;
+  --mm-card-2: #faf7ee;
+  --mm-ink: #1a1f2e;
+  --mm-teal: #3ab8b5;
+  --mm-teal-bright: #2a9e9b;
+  --mm-teal-deep: #1e6b69;
+  --mm-teal-shadow: #9dd4d2;
+  --mm-gold: #c9a84a;
+  --mm-gold-light: #9a7e30;
+  --mm-parchment: #1a1f2e;
+  --mm-text: #1a1f2e;
+  --mm-text-dim: #6b7d94;
+  --mm-line: #c5d9d8;
+  --mm-accent-h: 178;
+  --mm-accent-s: 52%;
+  --mm-accent-l: 42%;
+  --mm-scrollbar: #9dd4d2;
+  --mm-folder-1: #2a9e9b;
+  --mm-folder-2: #9a7e30;
+  --mm-folder-3: #c45a86;
+  --mm-folder-4: #4a6fa5;
+  --mm-folder-5: #1e6b69;
+  --mm-folder-6: #8a7028;
+}
+
+body.mm-palette-stagehand.theme-dark {
+  --mm-bg: #141734;
+  --mm-bg-alt: #16193a;
+  --mm-card: #172148;
+  --mm-card-2: #1a2040;
+  --mm-ink: #172148;
+  --mm-teal: #ff9cc1;
+  --mm-teal-bright: #ffbbe4;
+  --mm-teal-deep: #f07aad;
+  --mm-teal-shadow: #c45a86;
+  --mm-gold: #6d7dbb;
+  --mm-gold-light: #c1efff;
+  --mm-parchment: #fdfbf7;
+  --mm-text: #fdfbf7;
+  --mm-text-dim: #7182b0;
+  --mm-line: #2a3358;
+  --mm-accent-h: 338;
+  --mm-accent-s: 100%;
+  --mm-accent-l: 80%;
+  --mm-scrollbar: #2a3358;
+  --mm-folder-1: #ff9cc1;
+  --mm-folder-2: #6d7dbb;
+  --mm-folder-3: #c1efff;
+  --mm-folder-4: #ffbbe4;
+  --mm-folder-5: #7182b0;
+  --mm-folder-6: #ebebc7;
+}
+
+body.mm-palette-stagehand.theme-light {
+  --mm-bg: #fdfbf7;
+  --mm-bg-alt: #f4e8f0;
+  --mm-card: #ffffff;
+  --mm-card-2: #e8eef8;
+  --mm-ink: #172148;
+  --mm-teal: #ff9cc1;
+  --mm-teal-bright: #c45a86;
+  --mm-teal-deep: #a3446c;
+  --mm-teal-shadow: #ffbbe4;
+  --mm-gold: #4d5d9a;
+  --mm-gold-light: #6d7dbb;
+  --mm-parchment: #172148;
+  --mm-text: #172148;
+  --mm-text-dim: #7182b0;
+  --mm-line: #d4d8ea;
+  --mm-accent-h: 338;
+  --mm-accent-s: 100%;
+  --mm-accent-l: 66%;
+  --mm-scrollbar: #c5cbe0;
+  --mm-folder-1: #c45a86;
+  --mm-folder-2: #4d5d9a;
+  --mm-folder-3: #3a8aaa;
+  --mm-folder-4: #e86a9c;
+  --mm-folder-5: #4a5a8a;
+  --mm-folder-6: #8a8840;
+}
+
+body.mm-custom-colors {
+  --mm-teal: var(--mm-custom-teal);
+  --mm-teal-bright: var(--mm-custom-teal-bright);
+  --mm-gold: var(--mm-custom-gold);
+  --mm-gold-light: var(--mm-custom-gold-light);
+  --mm-bg: var(--mm-custom-bg);
+  --mm-bg-alt: var(--mm-custom-card);
+  --mm-card: var(--mm-custom-card);
+  --mm-card-2: var(--mm-custom-card-2);
+  --mm-text: var(--mm-custom-text);
+  --mm-text-dim: var(--mm-custom-text-dim);
+  --mm-line: var(--mm-custom-line);
+  --mm-ink: var(--mm-custom-ink);
+}
+
+/* ==========================================================================
+   03. Map Hub tokens → Obsidian
+   ========================================================================== */
+
+body {
+  --radius-s: calc(var(--mm-radius, 10px) - 4px);
+  --radius-m: var(--mm-radius, 10px);
+  --radius-l: calc(var(--mm-radius, 10px) + 4px);
+  --radius-xl: calc(var(--mm-radius, 10px) + 8px);
+  --input-radius: var(--radius-s);
+  --button-radius: var(--radius-s);
+  --tab-radius: var(--radius-m);
+  --tab-radius-active: var(--radius-m);
+  --modal-radius: var(--radius-l);
+  --prompt-border-width: 1px;
+
+  --accent-h: var(--mm-accent-h);
+  --accent-s: var(--mm-accent-s);
+  --accent-l: var(--mm-accent-l);
+  --color-accent: var(--mm-teal);
+  --color-accent-1: var(--mm-teal-bright);
+  --color-accent-2: var(--mm-teal-deep);
+  --interactive-accent: var(--mm-teal);
+  --interactive-accent-hover: var(--mm-teal-bright);
+  --interactive-normal: var(--mm-card-2);
+  --interactive-hover: color-mix(in srgb, var(--mm-teal) 16%, var(--mm-card-2));
+
+  --background-primary: var(--mm-bg);
+  --background-primary-alt: var(--mm-bg-alt);
+  --background-secondary: var(--mm-card);
+  --background-secondary-alt: var(--mm-card-2);
+  --background-modifier-hover: color-mix(in srgb, var(--mm-teal) 12%, transparent);
+  --background-modifier-active-hover: color-mix(in srgb, var(--mm-teal) 20%, transparent);
+  --background-modifier-border: var(--mm-line);
+  --background-modifier-border-hover: color-mix(in srgb, var(--mm-teal) 45%, var(--mm-line));
+  --background-modifier-border-focus: var(--mm-teal);
+  --background-modifier-form-field: var(--mm-card-2);
+  --background-modifier-success: var(--mm-teal-deep);
+  --background-modifier-error: #cf222e;
+  --background-modifier-message: var(--mm-card);
+
+  --text-normal: var(--mm-text);
+  --text-muted: var(--mm-text-dim);
+  --text-faint: color-mix(in srgb, var(--mm-text-dim) 72%, var(--mm-bg));
+  --text-on-accent: var(--mm-ink);
+  --text-on-accent-inverted: var(--mm-parchment);
+  --text-accent: var(--mm-teal-bright);
+  --text-accent-hover: var(--mm-gold);
+  --text-success: var(--mm-teal-bright);
+  --text-warning: var(--mm-gold);
+  --text-error: #f85149;
+  --text-selection: color-mix(in srgb, var(--mm-teal) 28%, transparent);
+  --text-highlight-bg: color-mix(in srgb, var(--mm-gold) 32%, transparent);
+  --caret-color: var(--mm-teal-bright);
+
+  --titlebar-background: var(--mm-bg);
+  --titlebar-background-focused: var(--mm-bg);
+  --ribbon-background: var(--mm-card);
+  --ribbon-background-collapsed: var(--mm-card);
+  --tab-container-background: var(--mm-card);
+  --tab-background-active: var(--mm-bg);
+  --tab-text-color: var(--mm-text-dim);
+  --tab-text-color-active: var(--mm-text);
+  --tab-text-color-focused: var(--mm-text);
+  --tab-text-color-focused-active: var(--mm-text);
+  --tab-text-color-focused-active-current: var(--mm-text);
+  --tab-divider-color: var(--mm-line);
+  --tab-outline-color: var(--mm-line);
+  --divider-color: var(--mm-line);
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb-bg: var(--mm-scrollbar);
+  --scrollbar-active-thumb-bg: var(--mm-teal);
+
+  --nav-item-color: var(--mm-text);
+  --nav-item-color-active: var(--mm-teal-bright);
+  --nav-item-color-highlighted: var(--mm-gold);
+  --nav-item-color-selected: var(--mm-teal-bright);
+  --nav-item-background-hover: color-mix(in srgb, var(--mm-teal) 12%, transparent);
+  --nav-item-background-active: color-mix(in srgb, var(--mm-teal) 16%, var(--mm-card-2));
+  --nav-item-background-selected: color-mix(in srgb, var(--mm-teal) 18%, var(--mm-card-2));
+  --nav-item-weight: 400;
+  --nav-item-weight-hover: 500;
+  --nav-item-weight-active: 600;
+  --nav-indentation-guide-width: 1px;
+  --nav-indentation-guide-color: var(--mm-line);
+  --nav-collapse-icon-color: var(--mm-text-dim);
+  --nav-collapse-icon-color-collapsed: var(--mm-text-faint, var(--mm-text-dim));
+
+  --checkbox-color: var(--mm-teal);
+  --checkbox-color-hover: var(--mm-teal-bright);
+  --checkbox-border-color: var(--mm-text-dim);
+  --checklist-done-color: var(--mm-text-dim);
+
+  --h1-color: var(--mm-text);
+  --h2-color: var(--mm-text);
+  --h3-color: var(--mm-text);
+  --h4-color: var(--mm-text);
+  --h5-color: var(--mm-text-dim);
+  --h6-color: var(--mm-text-dim);
+  --inline-title-color: var(--mm-text);
+  --bold-color: var(--mm-text);
+  --italic-color: var(--mm-text);
+
+  --link-color: var(--mm-teal-bright);
+  --link-color-hover: var(--mm-gold);
+  --link-unresolved-color: color-mix(in srgb, var(--mm-teal) 55%, var(--mm-text-dim));
+  --link-unresolved-opacity: 0.85;
+  --link-external-color: var(--mm-teal-bright);
+  --link-external-color-hover: var(--mm-gold);
+
+  --tag-color: var(--mm-teal-bright);
+  --tag-background: color-mix(in srgb, var(--mm-teal) 14%, transparent);
+  --tag-background-hover: color-mix(in srgb, var(--mm-teal) 22%, transparent);
+  --tag-border-color: color-mix(in srgb, var(--mm-teal-bright) 45%, transparent);
+  --tag-radius: 999px;
+  --tag-padding-x: 0.55em;
+  --tag-padding-y: 0.2em;
+  --tag-size: var(--font-ui-smaller);
+
+  --code-normal: var(--mm-text);
+  --code-background: var(--mm-card-2);
+  --code-comment: var(--mm-text-dim);
+  --code-function: var(--mm-teal-bright);
+  --code-important: var(--mm-gold);
+  --code-keyword: var(--mm-gold);
+  --code-operator: var(--mm-text-dim);
+  --code-property: var(--mm-teal);
+  --code-punctuation: var(--mm-text-dim);
+  --code-string: var(--mm-gold-light);
+  --code-tag: var(--mm-teal-deep);
+  --code-value: var(--mm-parchment);
+
+  --blockquote-color: var(--mm-text);
+  --blockquote-background-color: color-mix(in srgb, var(--mm-gold) 8%, var(--mm-card));
+  --blockquote-border-color: var(--mm-gold);
+  --blockquote-border-thickness: 3px;
+
+  --hr-color: var(--mm-line);
+  --hr-thickness: 1px;
+
+  --table-header-background: var(--mm-card);
+  --table-header-color: var(--mm-text-dim);
+  --table-row-alt-background: color-mix(in srgb, var(--mm-card) 70%, var(--mm-bg));
+  --table-row-background-hover: color-mix(in srgb, var(--mm-teal) 8%, transparent);
+  --table-border-color: var(--mm-line);
+
+  --embed-border-left: 3px solid var(--mm-teal);
+  --embed-padding: 0 0 0 1rem;
+  --embed-background: transparent;
+
+  --callout-radius: var(--radius-m);
+  --callout-blend-mode: normal;
+  --callout-border-width: 0 0 0 4px;
+  --callout-padding: 0.85rem 1rem;
+
+  --icon-color: var(--mm-text-dim);
+  --icon-color-hover: var(--mm-teal-bright);
+  --icon-color-active: var(--mm-teal-bright);
+  --icon-color-focused: var(--mm-text);
+
+  --graph-line: color-mix(in srgb, var(--mm-line) 80%, var(--mm-teal));
+  --graph-node: var(--mm-text-dim);
+  --graph-node-focused: var(--mm-teal-bright);
+  --graph-node-unresolved: color-mix(in srgb, var(--mm-text-dim) 50%, var(--mm-bg));
+  --graph-node-tag: var(--mm-gold);
+  --graph-node-attachment: var(--mm-parchment);
+
+  --canvas-color: var(--mm-line);
+  --canvas-dot-pattern: color-mix(in srgb, var(--mm-teal) 18%, var(--mm-line));
+
+  --slider-track-background: var(--mm-line);
+  --toggle-thumb-color: var(--mm-parchment);
+  --checkbox-radius: 4px;
+
+  --color-red: #f85149;
+  --color-orange: #d29922;
+  --color-yellow: var(--mm-gold);
+  --color-green: #3fb950;
+  --color-cyan: var(--mm-teal-bright);
+  --color-blue: #4a6fa5;
+  --color-purple: #6d7dbb;
+  --color-pink: #ff9cc1;
+
+  --color-base-00: var(--mm-bg);
+  --color-base-05: var(--mm-bg-alt);
+  --color-base-10: var(--mm-card);
+  --color-base-20: var(--mm-card-2);
+  --color-base-25: color-mix(in srgb, var(--mm-card-2) 80%, var(--mm-line));
+  --color-base-30: var(--mm-line);
+  --color-base-35: color-mix(in srgb, var(--mm-line) 80%, var(--mm-text-dim));
+  --color-base-40: var(--mm-text-dim);
+  --color-base-50: var(--mm-text-dim);
+  --color-base-60: color-mix(in srgb, var(--mm-text-dim) 70%, var(--mm-text));
+  --color-base-70: color-mix(in srgb, var(--mm-text) 70%, var(--mm-text-dim));
+  --color-base-100: var(--mm-text);
+}
+
+/* ==========================================================================
+   04. Typography
+   ========================================================================== */
+
+body {
+  --font-interface-theme: var(--mm-font-ui);
+  --font-text-theme: var(--mm-font-text);
+  --font-monospace-theme: var(--mm-font-mono);
+  --font-text-size: 16px;
+  --line-height-normal: 1.55;
+  --line-height-tight: 1.35;
+  --p-spacing: 0.9rem;
+  --heading-spacing: 1.6rem;
+
+  --h1-font: var(--mm-font-display);
+  --h2-font: var(--mm-font-display);
+  --h3-font: var(--mm-font-display);
+  --h4-font: var(--mm-font-ui);
+  --h5-font: var(--mm-font-ui);
+  --h6-font: var(--mm-font-ui);
+  --h1-weight: 700;
+  --h2-weight: 600;
+  --h3-weight: 600;
+  --h4-weight: 600;
+  --h5-weight: 600;
+  --h6-weight: 600;
+  --h1-line-height: 1.2;
+  --h2-line-height: 1.25;
+  --h3-line-height: 1.3;
+  --h1-size: 1.85em;
+  --h2-size: 1.45em;
+  --h3-size: 1.22em;
+  --h4-size: 1.08em;
+  --h5-size: 1em;
+  --h6-size: 0.92em;
+  --h1-style: normal;
+  --h2-style: normal;
+  --inline-title-font: var(--mm-font-display);
+  --inline-title-weight: 700;
+  --inline-title-size: 1.85em;
+  --inline-title-line-height: 1.2;
+}
+
+.markdown-rendered h1,
+.markdown-rendered h2,
+.markdown-rendered h3,
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.inline-title {
+  letter-spacing: -0.02em;
+}
+
+body.mm-fonts-hub-stage .markdown-rendered h1,
+body.mm-fonts-hub-stage .markdown-rendered h2,
+body.mm-fonts-hub-stage .cm-header-1,
+body.mm-fonts-hub-stage .cm-header-2,
+body.mm-fonts-hub-stage .inline-title {
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+
+.markdown-rendered h1,
+.inline-title {
+  color: var(--mm-text);
+}
+
+.markdown-rendered h2 {
+  color: var(--mm-text);
+  border-bottom: 1px solid color-mix(in srgb, var(--mm-gold) 35%, var(--mm-line));
+  padding-bottom: 0.25em;
+}
+
+/* ==========================================================================
+   05. Chrome — dashboards (cards, tabs, ribbon, status)
+   ========================================================================== */
+
+body {
+  --header-height: 40px;
+}
+
+.workspace-tabs .workspace-tab-header-container {
+  background-color: var(--mm-card);
+  border-bottom: 1px solid var(--mm-line);
+}
+
+.workspace-tab-header.is-active {
+  box-shadow: inset 0 -2px 0 var(--mm-teal);
+}
+
+.workspace-tab-header-inner-title {
+  font-weight: 500;
+}
+
+.workspace-leaf.mod-active .view-header {
+  border-bottom: 1px solid var(--mm-line);
+}
+
+.view-header-title {
+  font-family: var(--mm-font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.workspace-ribbon {
+  border-right: 1px solid var(--mm-line);
+}
+
+.workspace-ribbon.mod-left.is-collapsed {
+  border-right: none;
+}
+
+.status-bar {
+  background-color: var(--mm-card);
+  border-top: 1px solid var(--mm-line);
+  color: var(--mm-text-dim);
+  font-size: var(--font-ui-smaller);
+}
+
+.modal,
+.prompt,
+.suggestion-container,
+.menu,
+.popover,
+.vertical-tab-content,
+.workspace-drawer {
+  --background-primary: var(--mm-bg);
+  --background-secondary: var(--mm-card);
+}
+
+.modal {
+  border: 1px solid var(--mm-line);
+  box-shadow: 0 16px 48px color-mix(in srgb, var(--mm-ink) 45%, transparent);
+}
+
+.modal-title {
+  font-family: var(--mm-font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.vertical-tab-header-group-title {
+  font-family: var(--mm-font-ui);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: var(--font-ui-smaller);
+  color: var(--mm-text-dim);
+}
+
+.vertical-tab-nav-item.is-active {
+  background-color: color-mix(in srgb, var(--mm-teal) 14%, var(--mm-card));
+  color: var(--mm-teal-bright);
+}
+
+button.mod-cta {
+  background-color: var(--mm-teal);
+  color: var(--mm-ink);
+  font-weight: 600;
+}
+
+button.mod-cta:hover {
+  background-color: var(--mm-teal-bright);
+}
+
+.dropdown,
+input[type="text"],
+input[type="search"],
+input[type="number"],
+textarea {
+  border-color: var(--mm-line);
+}
+
+.dropdown:hover,
+input[type="text"]:hover,
+input[type="search"]:hover,
+textarea:hover {
+  border-color: color-mix(in srgb, var(--mm-teal) 50%, var(--mm-line));
+}
+
+*:focus-visible {
+  outline: 2px solid var(--mm-teal);
+  outline-offset: 2px;
+}
+
+body * {
+  scrollbar-width: thin;
+  scrollbar-color: var(--mm-scrollbar) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--mm-scrollbar);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--mm-teal);
+}
+
+/* ==========================================================================
+   06. Editor — markdown, callouts, code, properties
+   ========================================================================== */
+
+.markdown-preview-view,
+.markdown-source-view.mod-cm6 .cm-scroller {
+  background-color: var(--mm-bg);
+}
+
+.cm-sizer,
+.markdown-preview-sizer {
+  --file-margins: 24px 32px;
+}
+
+.markdown-rendered blockquote,
+.HyperMD-quote {
+  border-radius: 0 var(--radius-s) var(--radius-s) 0;
+}
+
+.markdown-rendered pre,
+.cm-s-obsidian span.cm-inline-code,
+.markdown-rendered code {
+  font-size: 0.92em;
+}
+
+.markdown-rendered pre {
+  border: 1px solid var(--mm-line);
+  border-radius: var(--radius-m);
+}
+
+.markdown-rendered table {
+  border-radius: var(--radius-m);
+  overflow: hidden;
+}
+
+.markdown-rendered thead th {
+  font-family: var(--mm-font-ui);
+  font-size: var(--font-ui-smaller);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.markdown-rendered a.tag {
+  font-family: var(--mm-font-ui);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.metadata-container,
+.mod-frontmatter {
+  background-color: var(--mm-card);
+  border: 1px solid var(--mm-line);
+  border-radius: var(--radius-m);
+  padding: 0.5rem 0.75rem;
+}
+
+.callout {
+  background-color: color-mix(in srgb, var(--callout-color) 10%, var(--mm-card));
+  border: 1px solid color-mix(in srgb, var(--callout-color) 28%, var(--mm-line));
+  border-left-width: 4px;
+}
+
+.callout-title {
+  font-family: var(--mm-font-ui);
+  font-weight: 600;
+}
+
+.callout[data-callout="note"],
+.callout[data-callout="info"] {
+  --callout-color: var(--mm-teal);
+}
+
+.callout[data-callout="tip"],
+.callout[data-callout="success"] {
+  --callout-color: var(--mm-teal-deep);
+}
+
+.callout[data-callout="important"],
+.callout[data-callout="quote"] {
+  --callout-color: var(--mm-gold);
+}
+
+.callout[data-callout="warning"],
+.callout[data-callout="caution"] {
+  --callout-color: var(--mm-gold-light);
+}
+
+.callout[data-callout="danger"],
+.callout[data-callout="error"],
+.callout[data-callout="bug"] {
+  --callout-color: #f85149;
+}
+
+.callout[data-callout="abstract"],
+.callout[data-callout="summary"],
+.callout[data-callout="tldr"] {
+  --callout-color: #4a6fa5;
+}
+
+/* ==========================================================================
+   07. Organization — file explorer, folders, folder notes
+   ========================================================================== */
+
+.nav-files-container {
+  padding: 6px 8px 12px;
+}
+
+.nav-folder-title,
+.nav-file-title {
+  margin: 1px 0;
+}
+
+body.mm-nav-cards .nav-folder-title,
+body.mm-nav-cards .nav-file-title {
+  border-radius: var(--radius-s);
+}
+
+body.mm-nav-cards .nav-file-title.is-active,
+body.mm-nav-cards .tree-item-self.fn-is-active {
+  background-color: var(--nav-item-background-active);
+}
+
+body.mm-active-accent-bar .nav-file-title.is-active,
+body.mm-active-accent-bar .tree-item-self.fn-is-active {
+  box-shadow: inset 3px 0 0 var(--mm-teal);
+}
+
+.nav-folder-title {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.nav-folder-children {
+  margin-left: var(--mm-nav-indent, 12px);
+  padding-left: 6px;
+  border-left: var(--nav-indentation-guide-width) solid var(--nav-indentation-guide-color);
+}
+
+body.mm-rainbow-folders .nav-folder > .nav-folder-title {
+  color: var(--mm-folder-1);
+}
+
+body.mm-rainbow-folders .nav-folder > .nav-folder-title .tree-item-icon {
+  color: var(--mm-folder-1);
+}
+
+body.mm-rainbow-folders .nav-folder > .nav-folder-children {
+  border-left-color: color-mix(in srgb, var(--mm-folder-1) 45%, var(--mm-line));
+}
+
+body.mm-rainbow-folders .nav-folder .nav-folder > .nav-folder-title,
+body.mm-rainbow-folders .nav-folder .nav-folder > .nav-folder-title .tree-item-icon {
+  color: var(--mm-folder-2);
+}
+
+body.mm-rainbow-folders .nav-folder .nav-folder > .nav-folder-children {
+  border-left-color: color-mix(in srgb, var(--mm-folder-2) 45%, var(--mm-line));
+}
+
+body.mm-rainbow-folders .nav-folder .nav-folder .nav-folder > .nav-folder-title,
+body.mm-rainbow-folders .nav-folder .nav-folder .nav-folder > .nav-folder-title .tree-item-icon {
+  color: var(--mm-folder-3);
+}
+
+body.mm-rainbow-folders .nav-folder .nav-folder .nav-folder > .nav-folder-children {
+  border-left-color: color-mix(in srgb, var(--mm-folder-3) 45%, var(--mm-line));
+}
+
+body.mm-rainbow-folders .nav-folder .nav-folder .nav-folder .nav-folder > .nav-folder-title,
+body.mm-rainbow-folders .nav-folder .nav-folder .nav-folder .nav-folder > .nav-folder-title .tree-item-icon {
+  color: var(--mm-folder-4);
+}
+
+body.mm-rainbow-folders .nav-folder .nav-folder .nav-folder .nav-folder > .nav-folder-children {
+  border-left-color: color-mix(in srgb, var(--mm-folder-4) 45%, var(--mm-line));
+}
+
+body.mm-rainbow-folders .nav-folder .nav-folder .nav-folder .nav-folder .nav-folder > .nav-folder-title,
+body.mm-rainbow-folders .nav-folder .nav-folder .nav-folder .nav-folder .nav-folder > .nav-folder-title .tree-item-icon {
+  color: var(--mm-folder-5);
+}
+
+body.mm-rainbow-folders .nav-folder .nav-folder .nav-folder .nav-folder .nav-folder > .nav-folder-children {
+  border-left-color: color-mix(in srgb, var(--mm-folder-5) 45%, var(--mm-line));
+}
+
+body.mm-rainbow-folders .nav-folder .nav-folder .nav-folder .nav-folder .nav-folder .nav-folder > .nav-folder-title,
+body.mm-rainbow-folders .nav-folder .nav-folder .nav-folder .nav-folder .nav-folder .nav-folder > .nav-folder-title .tree-item-icon {
+  color: var(--mm-folder-6);
+}
+
+body.mm-rainbow-folders .nav-folder .nav-folder .nav-folder .nav-folder .nav-folder .nav-folder > .nav-folder-children {
+  border-left-color: color-mix(in srgb, var(--mm-folder-6) 45%, var(--mm-line));
+}
+
+.workspace-leaf-content[data-type="file-explorer"] .nav-header {
+  padding: 8px 10px 4px;
+}
+
+.nav-action-button:hover {
+  color: var(--mm-teal-bright);
+  background-color: color-mix(in srgb, var(--mm-teal) 14%, transparent);
+  border-radius: var(--radius-s);
+}
+
+.has-folder-note > .nav-folder-title .nav-folder-title-content {
+  text-decoration: none;
+}
+
+.has-folder-note > .nav-folder-title {
+  font-weight: 650;
+}
+
+.tree-item-self.fn-is-active .nav-folder-title-content,
+.tree-item-self.fn-is-active .nav-file-title-content {
+  color: var(--mm-teal-bright);
+}
+
+.search-result-file-title {
+  font-weight: 600;
+  color: var(--mm-teal-bright);
+}
+
+.search-result-file-matches {
+  border-left: 2px solid var(--mm-line);
+  margin-left: 0.4em;
+}
+
+.workspace-tab-header[aria-label*="Files"] .workspace-tab-header-inner-icon,
+.workspace-tab-header[data-type="file-explorer"] .workspace-tab-header-inner-icon {
+  color: var(--mm-teal-bright);
+}
+
+/* Bookmarks / outline share explorer rhythm */
+.tree-item-self {
+  border-radius: var(--radius-s);
+}
+
+.outline .tree-item-self {
+  font-family: var(--mm-font-ui);
+}
+
+.outline .tree-item.mod-collapsible > .tree-item-self {
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   08. Plugins — Bases, dashboard cards, canvas, graph extras
+   ========================================================================== */
+
+body {
+  --bases-embed-border-width: 0;
+  --bases-table-header-background: transparent;
+  --bases-table-header-background-hover: var(--background-modifier-hover);
+  --bases-cards-container-background: transparent;
+}
+
+.block-language-base,
+.markdown-source-view.mod-cm6 .cm-content > .bases-embed,
+.markdown-preview-view .bases-embed {
+  background-color: var(--mm-card);
+  border: 1px solid var(--mm-line);
+  border-radius: var(--radius-m);
+  padding: 0.5rem 0.75rem;
+}
+
+.bases-thead .bases-table-header-label {
+  color: var(--mm-text-dim);
+  font-size: var(--font-ui-smaller);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.db-peek {
+  background-color: var(--mm-card);
+  border-color: var(--mm-line);
+}
+
+.canvas-node-container {
+  border-radius: var(--radius-m);
+}
+
+.canvas-node.is-focused .canvas-node-container {
+  border-color: var(--mm-teal);
+  box-shadow: 0 0 0 1px var(--mm-teal);
+}
+
+.graph-view.color-fill-tag {
+  color: var(--mm-gold);
+}
+
+.graph-view.color-fill-attachment {
+  color: var(--mm-parchment);
+}
+
+.graph-view.color-fill-focused {
+  color: var(--mm-teal-bright);
+}
+
+.setting-item-heading {
+  font-family: var(--mm-font-display);
+  letter-spacing: -0.02em;
+}
+
+.community-item,
+.mod-community-modal .community-item {
+  border-radius: var(--radius-m);
+  border-color: var(--mm-line);
+}
+
+.progress-bar-line {
+  background-color: var(--mm-teal);
+}
+
+/* MultiMuse / Discord scene tracker inherits semantic colors */
+.multimuse-scene-context {
+  background: var(--mm-card-2);
+  border: 1px solid var(--mm-line);
+  border-radius: var(--radius-m);
+}
