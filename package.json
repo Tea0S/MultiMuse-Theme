@@ -1,0 +1,15 @@
+{
+  "name": "multimuse-theme",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Obsidian theme matched to the MultiMuse and StageHand dashboards",
+  "scripts": {
+    "version:patch": "node scripts/bump-version.mjs patch",
+    "version:minor": "node scripts/bump-version.mjs minor",
+    "version:major": "node scripts/bump-version.mjs major",
+    "release:patch": "node scripts/bump-version.mjs patch && node -e \"console.log('\\nVersion bumped. Commit and push to master to publish.')\"",
+    "release:minor": "node scripts/bump-version.mjs minor && node -e \"console.log('\\nVersion bumped. Commit and push to master to publish.')\"",
+    "release:major": "node scripts/bump-version.mjs major && node -e \"console.log('\\nVersion bumped. Commit and push to master to publish.')\""
+  },
+  "license": "MIT"
+}
