@@ -45,3 +45,8 @@ Obsidian community / BRAT installs need a GitHub Release whose **tag equals `man
 3. GitHub Actions (`.github/workflows/release.yml`) creates/updates a release tagged with the manifest version and uploads the theme assets.
 
 Do **not** create tags like `v1.0.0` by hand. Re-running CI for the same version updates that release in place.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
+
