@@ -12,7 +12,7 @@ Reload Obsidian once after adding the theme so Style Settings picks up the contr
 
 ## Color presets
 
-Style Settings chooses the **palette**. Light and dark follow **Settings → Appearance → Base color scheme**. The selected palette is kept when you switch between light and dark.
+Style Settings chooses the **palette**. Light and dark follow **Settings → Appearance → Base color scheme**.
 
 | Palette | Dark | Light |
 | --- | --- | --- |

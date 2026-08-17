@@ -20,8 +20,9 @@ settings:
     -
         id: mm-color-preset
         title: Color preset
-        description: Muse is MultiMuse teal and gold. Muse Classic is multimuse.app charcoal and paper. StageHand is booth navy, signature pink, and periwinkle. The palette stays selected when you switch light and dark.
-        type: variable-select
+        description: Muse is MultiMuse teal and gold. Muse Classic is multimuse.app charcoal and paper. StageHand is booth navy, signature pink, and periwinkle. Light and dark follow the app.
+        type: class-select
+        allowEmpty: false
         default: mm-palette-stage
         options:
             -
@@ -43,7 +44,8 @@ settings:
         id: mm-font-pack
         title: Font pack
         description: MultiMuse and StageHand dashboards use Outfit + Fraunces. Muse display is Source Sans + Cinzel headings + Cormorant editor. Muse Classic display is Source Sans + Fraunces headings.
-        type: variable-select
+        type: class-select
+        allowEmpty: false
         default: mm-fonts-multimuse
         options:
             -
@@ -282,13 +284,6 @@ body.mm-fonts-stagehand {
   --mm-font-display: "Fraunces", Georgia, serif;
 }
 
-body.css-settings-manager {
-  --mm-color-preset: mm-palette-stage;
-  --mm-font-pack: mm-fonts-multimuse;
-  container-name: mm-theme;
-  container-type: normal;
-}
-
 /* ==========================================================================
    02. Palettes — light/dark follow Obsidian (.theme-light / .theme-dark)
    Muse is default. Muse Classic is mm-palette-classic.
@@ -320,58 +315,6 @@ body.css-settings-manager {
   --mm-folder-4: #6d7dbb;
   --mm-folder-5: #03928c;
   --mm-folder-6: #e3c868;
-
-  --mm-classic-bg: #0f1220;
-  --mm-classic-bg-alt: #141828;
-  --mm-classic-card: #1a1f2e;
-  --mm-classic-card-2: #222838;
-  --mm-classic-ink: #0f1220;
-  --mm-classic-teal: #3ab8b5;
-  --mm-classic-teal-bright: #3ab8b5;
-  --mm-classic-teal-deep: #2a9e9b;
-  --mm-classic-teal-shadow: #1e6b69;
-  --mm-classic-gold: #e8c96a;
-  --mm-classic-gold-light: #f5e6b8;
-  --mm-classic-parchment: #faf7ee;
-  --mm-classic-text: #faf7ee;
-  --mm-classic-text-dim: #6b7d94;
-  --mm-classic-line: #2e3d52;
-  --mm-classic-accent-h: 178;
-  --mm-classic-accent-s: 52%;
-  --mm-classic-accent-l: 47%;
-  --mm-classic-scrollbar: #3d4a66;
-  --mm-classic-folder-1: #3ab8b5;
-  --mm-classic-folder-2: #e8c96a;
-  --mm-classic-folder-3: #ff9cc1;
-  --mm-classic-folder-4: #4a6fa5;
-  --mm-classic-folder-5: #2a9e9b;
-  --mm-classic-folder-6: #f5e6b8;
-
-  --mm-stagehand-bg: #141734;
-  --mm-stagehand-bg-alt: #16193a;
-  --mm-stagehand-card: #172148;
-  --mm-stagehand-card-2: #1a2040;
-  --mm-stagehand-ink: #172148;
-  --mm-stagehand-teal: #ff9cc1;
-  --mm-stagehand-teal-bright: #ffbbe4;
-  --mm-stagehand-teal-deep: #f07aad;
-  --mm-stagehand-teal-shadow: #c45a86;
-  --mm-stagehand-gold: #6d7dbb;
-  --mm-stagehand-gold-light: #c1efff;
-  --mm-stagehand-parchment: #fdfbf7;
-  --mm-stagehand-text: #fdfbf7;
-  --mm-stagehand-text-dim: #7182b0;
-  --mm-stagehand-line: #2a3358;
-  --mm-stagehand-accent-h: 338;
-  --mm-stagehand-accent-s: 100%;
-  --mm-stagehand-accent-l: 80%;
-  --mm-stagehand-scrollbar: #2a3358;
-  --mm-stagehand-folder-1: #ff9cc1;
-  --mm-stagehand-folder-2: #6d7dbb;
-  --mm-stagehand-folder-3: #c1efff;
-  --mm-stagehand-folder-4: #ffbbe4;
-  --mm-stagehand-folder-5: #7182b0;
-  --mm-stagehand-folder-6: #ebebc7;
 }
 
 .theme-light {
@@ -400,61 +343,10 @@ body.css-settings-manager {
   --mm-folder-4: #4d5d9a;
   --mm-folder-5: #015253;
   --mm-folder-6: #8a7028;
-
-  --mm-classic-bg: #faf7ee;
-  --mm-classic-bg-alt: #f3efe4;
-  --mm-classic-card: #ffffff;
-  --mm-classic-card-2: #faf7ee;
-  --mm-classic-ink: #1a1f2e;
-  --mm-classic-teal: #3ab8b5;
-  --mm-classic-teal-bright: #2a9e9b;
-  --mm-classic-teal-deep: #1e6b69;
-  --mm-classic-teal-shadow: #9dd4d2;
-  --mm-classic-gold: #c9a84a;
-  --mm-classic-gold-light: #9a7e30;
-  --mm-classic-parchment: #1a1f2e;
-  --mm-classic-text: #1a1f2e;
-  --mm-classic-text-dim: #6b7d94;
-  --mm-classic-line: #c5d9d8;
-  --mm-classic-accent-h: 178;
-  --mm-classic-accent-s: 52%;
-  --mm-classic-accent-l: 42%;
-  --mm-classic-scrollbar: #9dd4d2;
-  --mm-classic-folder-1: #2a9e9b;
-  --mm-classic-folder-2: #9a7e30;
-  --mm-classic-folder-3: #c45a86;
-  --mm-classic-folder-4: #4a6fa5;
-  --mm-classic-folder-5: #1e6b69;
-  --mm-classic-folder-6: #8a7028;
-
-  --mm-stagehand-bg: #fdfbf7;
-  --mm-stagehand-bg-alt: #f4e8f0;
-  --mm-stagehand-card: #ffffff;
-  --mm-stagehand-card-2: #e8eef8;
-  --mm-stagehand-ink: #172148;
-  --mm-stagehand-teal: #ff9cc1;
-  --mm-stagehand-teal-bright: #c45a86;
-  --mm-stagehand-teal-deep: #a3446c;
-  --mm-stagehand-teal-shadow: #ffbbe4;
-  --mm-stagehand-gold: #4d5d9a;
-  --mm-stagehand-gold-light: #6d7dbb;
-  --mm-stagehand-parchment: #172148;
-  --mm-stagehand-text: #172148;
-  --mm-stagehand-text-dim: #7182b0;
-  --mm-stagehand-line: #d4d8ea;
-  --mm-stagehand-accent-h: 338;
-  --mm-stagehand-accent-s: 100%;
-  --mm-stagehand-accent-l: 66%;
-  --mm-stagehand-scrollbar: #c5cbe0;
-  --mm-stagehand-folder-1: #c45a86;
-  --mm-stagehand-folder-2: #4d5d9a;
-  --mm-stagehand-folder-3: #3a8aaa;
-  --mm-stagehand-folder-4: #e86a9c;
-  --mm-stagehand-folder-5: #4a5a8a;
-  --mm-stagehand-folder-6: #8a8840;
 }
 
-body.mm-palette-classic.theme-dark {
+html.theme-dark body.mm-palette-classic,
+body.theme-dark.mm-palette-classic {
   --mm-bg: #0f1220;
   --mm-bg-alt: #141828;
   --mm-card: #1a1f2e;
@@ -482,7 +374,8 @@ body.mm-palette-classic.theme-dark {
   --mm-folder-6: #f5e6b8;
 }
 
-body.mm-palette-classic.theme-light {
+html.theme-light body.mm-palette-classic,
+body.theme-light.mm-palette-classic {
   --mm-bg: #faf7ee;
   --mm-bg-alt: #f3efe4;
   --mm-card: #ffffff;
@@ -510,7 +403,8 @@ body.mm-palette-classic.theme-light {
   --mm-folder-6: #8a7028;
 }
 
-body.mm-palette-stagehand.theme-dark {
+html.theme-dark body.mm-palette-stagehand,
+body.theme-dark.mm-palette-stagehand {
   --mm-bg: #141734;
   --mm-bg-alt: #16193a;
   --mm-card: #172148;
@@ -538,7 +432,8 @@ body.mm-palette-stagehand.theme-dark {
   --mm-folder-6: #ebebc7;
 }
 
-body.mm-palette-stagehand.theme-light {
+html.theme-light body.mm-palette-stagehand,
+body.theme-light.mm-palette-stagehand {
   --mm-bg: #fdfbf7;
   --mm-bg-alt: #f4e8f0;
   --mm-card: #ffffff;
@@ -566,109 +461,7 @@ body.mm-palette-stagehand.theme-light {
   --mm-folder-6: #8a8840;
 }
 
-/*
-  Style Settings variable-select writes --mm-color-preset / --mm-font-pack on
-  body.css-settings-manager (a <style> tag). That survives Appearance rebuilds
-  of document.body.className, which drop class-select classes like mm-palette-classic.
-
-  Style queries cannot style the container itself, so tokens are applied on
-  direct children and inherited from there. body.mm-palette-* rules above remain
-  as a fallback if an older class is still present.
-*/
-@container mm-theme style(--mm-color-preset: mm-palette-classic) {
-  body > * {
-    --mm-bg: var(--mm-classic-bg);
-    --mm-bg-alt: var(--mm-classic-bg-alt);
-    --mm-card: var(--mm-classic-card);
-    --mm-card-2: var(--mm-classic-card-2);
-    --mm-ink: var(--mm-classic-ink);
-    --mm-teal: var(--mm-classic-teal);
-    --mm-teal-bright: var(--mm-classic-teal-bright);
-    --mm-teal-deep: var(--mm-classic-teal-deep);
-    --mm-teal-shadow: var(--mm-classic-teal-shadow);
-    --mm-gold: var(--mm-classic-gold);
-    --mm-gold-light: var(--mm-classic-gold-light);
-    --mm-parchment: var(--mm-classic-parchment);
-    --mm-text: var(--mm-classic-text);
-    --mm-text-dim: var(--mm-classic-text-dim);
-    --mm-line: var(--mm-classic-line);
-    --mm-accent-h: var(--mm-classic-accent-h);
-    --mm-accent-s: var(--mm-classic-accent-s);
-    --mm-accent-l: var(--mm-classic-accent-l);
-    --mm-scrollbar: var(--mm-classic-scrollbar);
-    --mm-folder-1: var(--mm-classic-folder-1);
-    --mm-folder-2: var(--mm-classic-folder-2);
-    --mm-folder-3: var(--mm-classic-folder-3);
-    --mm-folder-4: var(--mm-classic-folder-4);
-    --mm-folder-5: var(--mm-classic-folder-5);
-    --mm-folder-6: var(--mm-classic-folder-6);
-  }
-}
-
-@container mm-theme style(--mm-color-preset: mm-palette-stagehand) {
-  body > * {
-    --mm-bg: var(--mm-stagehand-bg);
-    --mm-bg-alt: var(--mm-stagehand-bg-alt);
-    --mm-card: var(--mm-stagehand-card);
-    --mm-card-2: var(--mm-stagehand-card-2);
-    --mm-ink: var(--mm-stagehand-ink);
-    --mm-teal: var(--mm-stagehand-teal);
-    --mm-teal-bright: var(--mm-stagehand-teal-bright);
-    --mm-teal-deep: var(--mm-stagehand-teal-deep);
-    --mm-teal-shadow: var(--mm-stagehand-teal-shadow);
-    --mm-gold: var(--mm-stagehand-gold);
-    --mm-gold-light: var(--mm-stagehand-gold-light);
-    --mm-parchment: var(--mm-stagehand-parchment);
-    --mm-text: var(--mm-stagehand-text);
-    --mm-text-dim: var(--mm-stagehand-text-dim);
-    --mm-line: var(--mm-stagehand-line);
-    --mm-accent-h: var(--mm-stagehand-accent-h);
-    --mm-accent-s: var(--mm-stagehand-accent-s);
-    --mm-accent-l: var(--mm-stagehand-accent-l);
-    --mm-scrollbar: var(--mm-stagehand-scrollbar);
-    --mm-folder-1: var(--mm-stagehand-folder-1);
-    --mm-folder-2: var(--mm-stagehand-folder-2);
-    --mm-folder-3: var(--mm-stagehand-folder-3);
-    --mm-folder-4: var(--mm-stagehand-folder-4);
-    --mm-folder-5: var(--mm-stagehand-folder-5);
-    --mm-folder-6: var(--mm-stagehand-folder-6);
-  }
-}
-
-@container mm-theme style(--mm-font-pack: mm-fonts-hub-stage) {
-  body > * {
-    --mm-font-ui: "Source Sans 3", system-ui, sans-serif;
-    --mm-font-text: "Cormorant Garamond", Georgia, serif;
-    --mm-font-display: "Cinzel", Georgia, serif;
-  }
-}
-
-@container mm-theme style(--mm-font-pack: mm-fonts-hub-classic) {
-  body > * {
-    --mm-font-ui: "Source Sans 3", system-ui, sans-serif;
-    --mm-font-text: "Source Sans 3", system-ui, sans-serif;
-    --mm-font-display: "Fraunces", Georgia, serif;
-  }
-}
-
-@container mm-theme style(--mm-font-pack: mm-fonts-stagehand) {
-  body > * {
-    --mm-font-ui: "Outfit", system-ui, sans-serif;
-    --mm-font-text: "Outfit", system-ui, sans-serif;
-    --mm-font-display: "Fraunces", Georgia, serif;
-  }
-}
-
-@container mm-theme style(--mm-font-pack: mm-fonts-multimuse) {
-  body > * {
-    --mm-font-ui: "Outfit", system-ui, sans-serif;
-    --mm-font-text: "Outfit", system-ui, sans-serif;
-    --mm-font-display: "Fraunces", Georgia, serif;
-  }
-}
-
-body.mm-custom-colors,
-body.mm-custom-colors > * {
+body.mm-custom-colors {
   --mm-teal: var(--mm-custom-teal);
   --mm-teal-bright: var(--mm-custom-teal-bright);
   --mm-gold: var(--mm-custom-gold);
