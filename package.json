@@ -1,6 +1,6 @@
 {
   "name": "multimuse-theme",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "Obsidian theme matched to the MultiMuse and StageHand dashboards",
   "scripts": {
