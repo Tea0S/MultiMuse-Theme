@@ -8,7 +8,7 @@ settings:
     -
         id: mm-info
         title: Palettes
-        description: "Palettes: **Stage** and **Classic** from Hub, plus **StageHand** from the StageHand dashboard. Light and dark follow **Settings → Appearance → Base color scheme**."
+        description: "Palettes: **Muse** and **Muse Classic** from MultiMuse, plus **StageHand**. Light and dark follow **Settings → Appearance → Base color scheme**."
         type: info-text
         markdown: true
     -
@@ -20,16 +20,16 @@ settings:
     -
         id: mm-color-preset
         title: Color preset
-        description: Stage is Hub’s teal and gold. Classic is multimuse.app charcoal and paper. StageHand is booth navy, signature pink, and periwinkle. Light and dark follow the app.
+        description: Muse is MultiMuse teal and gold. Muse Classic is multimuse.app charcoal and paper. StageHand is booth navy, signature pink, and periwinkle. Light and dark follow the app.
         type: class-select
         allowEmpty: false
         default: mm-palette-stage
         options:
             -
-                label: Stage
+                label: Muse
                 value: mm-palette-stage
             -
-                label: Classic
+                label: Muse Classic
                 value: mm-palette-classic
             -
                 label: StageHand
@@ -43,7 +43,7 @@ settings:
     -
         id: mm-font-pack
         title: Font pack
-        description: MultiMuse and StageHand dashboards use Outfit + Fraunces. Hub Stage is Source Sans + Cinzel headings + Cormorant editor. Hub Classic is Source Sans + Fraunces headings.
+        description: MultiMuse and StageHand dashboards use Outfit + Fraunces. Muse display is Source Sans + Cinzel headings + Cormorant editor. Muse Classic display is Source Sans + Fraunces headings.
         type: class-select
         allowEmpty: false
         default: mm-fonts-multimuse
@@ -52,10 +52,10 @@ settings:
                 label: MultiMuse (Outfit + Fraunces)
                 value: mm-fonts-multimuse
             -
-                label: Hub Stage (Source Sans + Cinzel)
+                label: Muse display (Source Sans + Cinzel)
                 value: mm-fonts-hub-stage
             -
-                label: Hub Classic (Source Sans + Fraunces)
+                label: Muse Classic display (Source Sans + Fraunces)
                 value: mm-fonts-hub-classic
             -
                 label: StageHand (Outfit + Fraunces)
@@ -69,13 +69,13 @@ settings:
     -
         id: mm-custom-colors
         title: Override preset colors
-        description: When on, the pickers below replace the active palette. Turn off to return to Stage, Classic, or StageHand.
+        description: When on, the pickers below replace the active palette. Turn off to return to Muse, Muse Classic, or StageHand.
         type: class-toggle
         default: false
     -
         id: mm-custom-teal
         title: Accent
-        description: Links, checks, active states. Teal on Stage/Classic, pink on StageHand.
+        description: Links, checks, active states. Teal on Muse/Muse Classic, pink on StageHand.
         type: variable-themed-color
         format: hex
         opacity: false
@@ -92,7 +92,7 @@ settings:
     -
         id: mm-custom-gold
         title: Secondary
-        description: Gold on Stage/Classic, periwinkle on StageHand.
+        description: Gold on Muse/Muse Classic, periwinkle on StageHand.
         type: variable-themed-color
         format: hex
         default-light: '#c8a84b'
@@ -108,7 +108,7 @@ settings:
     -
         id: mm-custom-bg
         title: Background
-        description: Primary canvas (Hub deep-stage / paper).
+        description: Primary canvas.
         type: variable-themed-color
         format: hex
         default-light: '#f4eed8'
@@ -186,7 +186,7 @@ settings:
     -
         id: mm-folder-1
         title: Folder color 1
-        description: Independent of the Hub preset so vault structure stays recognizable.
+        description: Independent of the color preset so vault structure stays recognizable.
         type: variable-color
         format: hex
         default: '#0ad8c2'
@@ -285,8 +285,8 @@ body.mm-fonts-stagehand {
 }
 
 /* ==========================================================================
-   02. Hub palettes — light/dark follow Obsidian (.theme-light / .theme-dark)
-   Stage is default. Classic is mm-palette-classic.
+   02. Palettes — light/dark follow Obsidian (.theme-light / .theme-dark)
+   Muse is default. Muse Classic is mm-palette-classic.
    ========================================================================== */
 
 .theme-dark {
@@ -473,7 +473,7 @@ body.mm-custom-colors {
 }
 
 /* ==========================================================================
-   03. Map Hub tokens → Obsidian
+   03. Map palette tokens → Obsidian
    ========================================================================== */
 
 body {
@@ -577,10 +577,15 @@ body {
 
   --link-color: var(--mm-teal-bright);
   --link-color-hover: var(--mm-gold);
+  --link-decoration: none;
+  --link-decoration-hover: none;
   --link-unresolved-color: color-mix(in srgb, var(--mm-teal) 55%, var(--mm-text-dim));
   --link-unresolved-opacity: 0.85;
+  --link-unresolved-decoration: none;
   --link-external-color: var(--mm-teal-bright);
   --link-external-color-hover: var(--mm-gold);
+  --link-external-decoration: none;
+  --link-external-decoration-hover: none;
 
   --tag-color: var(--mm-teal-bright);
   --tag-background: color-mix(in srgb, var(--mm-teal) 14%, transparent);

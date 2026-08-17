@@ -1,6 +1,6 @@
 # MultiMuse
 
-Obsidian theme matched to the MultiMuse / StageHand dashboards and [Hub](https://hub.multimuse.app) color presets.
+Obsidian theme matched to the MultiMuse and StageHand dashboards.
 
 ## Install
 
@@ -16,15 +16,15 @@ Style Settings chooses the **palette**. Light and dark follow **Settings → App
 
 | Palette | Dark | Light |
 | --- | --- | --- |
-| **Stage** (default) | Hub deep teal stage, gold quill | Hub parchment stage |
-| **Classic** | multimuse.app charcoal | multimuse.app paper |
+| **Muse** (default) | Deep teal stage, gold quill | Parchment stage, same teal and gold |
+| **Muse Classic** | multimuse.app charcoal | multimuse.app paper |
 | **StageHand** | Booth navy, signature pink, periwinkle | Paper booth, same pink and periwinkle |
 
 Turn on **Override preset colors** under Colors to mix your own accent, secondary, and surfaces (separate light and dark pickers). Turn it off to return to the selected palette.
 
 ## Fonts
 
-Default pack is **MultiMuse**: Outfit for UI/editor, Fraunces for headings (same as multimuse.app / stagehand.quest). Optional Hub packs use Source Sans 3, Cinzel, and Cormorant Garamond.
+Default pack is **MultiMuse**: Outfit for UI and editor, Fraunces for headings (same as multimuse.app and stagehand.quest). Optional packs use Source Sans 3, Cinzel, and Cormorant Garamond.
 
 ## Organization
 
