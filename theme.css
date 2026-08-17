@@ -345,7 +345,8 @@ body.mm-fonts-stagehand {
   --mm-folder-6: #8a7028;
 }
 
-body.mm-palette-classic.theme-dark {
+html.theme-dark body.mm-palette-classic,
+body.theme-dark.mm-palette-classic {
   --mm-bg: #0f1220;
   --mm-bg-alt: #141828;
   --mm-card: #1a1f2e;
@@ -373,7 +374,8 @@ body.mm-palette-classic.theme-dark {
   --mm-folder-6: #f5e6b8;
 }
 
-body.mm-palette-classic.theme-light {
+html.theme-light body.mm-palette-classic,
+body.theme-light.mm-palette-classic {
   --mm-bg: #faf7ee;
   --mm-bg-alt: #f3efe4;
   --mm-card: #ffffff;
@@ -401,7 +403,8 @@ body.mm-palette-classic.theme-light {
   --mm-folder-6: #8a7028;
 }
 
-body.mm-palette-stagehand.theme-dark {
+html.theme-dark body.mm-palette-stagehand,
+body.theme-dark.mm-palette-stagehand {
   --mm-bg: #141734;
   --mm-bg-alt: #16193a;
   --mm-card: #172148;
@@ -429,7 +432,8 @@ body.mm-palette-stagehand.theme-dark {
   --mm-folder-6: #ebebc7;
 }
 
-body.mm-palette-stagehand.theme-light {
+html.theme-light body.mm-palette-stagehand,
+body.theme-light.mm-palette-stagehand {
   --mm-bg: #fdfbf7;
   --mm-bg-alt: #f4e8f0;
   --mm-card: #ffffff;
